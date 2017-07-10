@@ -16,8 +16,6 @@ else:
 '''
 
 
-
-'''
 print ("==========================================================")
 print ("task 1")
 print ("==========================================================")
@@ -76,7 +74,7 @@ if c!=0:
     print ("Result of expression (a-b*c)/(a+b)%c is:" , x)
 else:
     print ("Error: Sorry operation couldn't be performed due to 'Division by zero' rule")
-'''
+
 
 
 print ("==========================================================")
@@ -91,16 +89,27 @@ if a+b != 0:
     c = float(input("Please, enter a namber for variable c"))
     print ("variable c is:", c)
     x = math.fabs(a-b) / (a + b) ** 3 - math.cos(c)
-    print ("Result of expression |a-b|/( a+b)**3-cos(c) is:" , x)
+    print ("Result of expression |a-b|/(a+b)**3-cos(c) is:" , x)
 else:
     print ("Error: Sorry operation couldn't be performed due to 'Division by zero' rule")
+
 
 
 print ("==========================================================")
 print ("task 6")
 print ("==========================================================")
 
-
-
-
-#( ln( 1 + c ) / -b )4+ | a |
+a = float(input("Please, enter a namber for variable a"))
+print ("variable a is:", a)
+b = float(input("Please, enter a namber for variable b"))
+print ("variable b is:", b)
+if b != 0:
+    c = float(input("Please, enter a namber for variable c"))
+    print ("variable c is:", c)
+    if c < 0:
+        print ("Error: The operation couldn't be performed - variable c should be >= 0")
+    else:
+        x = (math.log1p(c) / -b)**4 + math.fabs(a)
+        print ("Result of expression (ln(1+c)/-b)**4+|a| is:" , x)
+else:
+    print ("Error: Sorry operation couldn't be performed due to 'Division by zero' rule")
