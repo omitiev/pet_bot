@@ -22,15 +22,14 @@ print ("==========================================================")
 print ("task 1")
 print ("==========================================================")
 
-a = float(input("Please, enter a namber"))
+a = float(input("Please, enter a namber for variable a"))
 print ("variable a is:", a)
-b = float(input("Please, enter a namber"))
+b = float(input("Please, enter a namber for variable b"))
 print ("variable b is:", b)
-c = float(input("Please, enter a namber"))
+c = float(input("Please, enter a namber for variable c"))
 print ("variable c is:", c)
-x=a+b*(c/2)
+x = a + b * (c / 2)
 print ("Result of expression a+b*(c/2) is:" , x)
-'''
 
 
 
@@ -38,11 +37,11 @@ print ("==========================================================")
 print ("task 2")
 print ("==========================================================")
 
-a = float(input("Please, enter a namber"))
+a = float(input("Please, enter a namber for variable a"))
 print ("variable a is:", a)
-b = float(input("Please, enter a namber"))
+b = float(input("Please, enter a namber for variable b"))
 print ("variable b is:", b)
-x=(a**2+b**2)%2
+x = (a ** 2 + b ** 2) % 2
 print ("Result of expression (a**2+b**2)%2 is:" , x)
 
 
@@ -51,9 +50,15 @@ print ("==========================================================")
 print ("task 3")
 print ("==========================================================")
 
-
-
-
+a = float(input("Please, enter a namber for variable a"))
+print ("variable a is:", a)
+b = float(input("Please, enter a namber for variable b"))
+print ("variable b is:", b)
+c = float(input("Please, enter a namber for variable c"))
+print ("variable c is:", c)
+x= (a + b) / 12 * c % 4 + b
+print ("Result of expression (a+b)/12*c%4+b is:" , x)
+'''
 
 
 print ("==========================================================")
