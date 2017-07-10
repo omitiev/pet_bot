@@ -58,7 +58,7 @@ c = float(input("Please, enter a namber for variable c"))
 print ("variable c is:", c)
 x = (a + b) / 12 * c % 4 + b
 print ("Result of expression (a+b)/12*c%4+b is:" , x)
-'''
+
 
 
 print ("==========================================================")
@@ -76,17 +76,26 @@ if c!=0:
     print ("Result of expression (a-b*c)/(a+b)%c is:" , x)
 else:
     print ("Error: Sorry operation couldn't be performed due to 'Division by zero' rule")
+'''
 
 
 print ("==========================================================")
 print ("task 5")
 print ("==========================================================")
 
+a = float(input("Please, enter a namber for variable a"))
+print ("variable a is:", a)
+b = float(input("Please, enter a namber for variable b"))
+print ("variable b is:", b)
+if a+b != 0:
+    c = float(input("Please, enter a namber for variable c"))
+    print ("variable c is:", c)
+    x = math.fabs(a-b) / (a + b) ** 3 - math.cos(c)
+    print ("Result of expression |a-b|/( a+b)**3-cos(c) is:" , x)
+else:
+    print ("Error: Sorry operation couldn't be performed due to 'Division by zero' rule")
 
 
-
-
-#| a - b | /( a + b)3 - cos( c )
 print ("==========================================================")
 print ("task 6")
 print ("==========================================================")
