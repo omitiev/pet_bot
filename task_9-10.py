@@ -27,16 +27,15 @@ print ("==========================================================")
 print ("task 10")
 print ("==========================================================")
 
-cond = str(input("Please, enter condition for the task in the next way name*YYYY-MM-DD*YYYY-MM-DD : "))
+cond = str(input("Please, enter condition for the task in the next way name*birth date*death date (date should be in the next format YYYY-MM-DD): "))
 print("You entered next condition : \n%s" % cond)
 lst_1 = cond.split('*')
-lst1_1 = lst_1[1].split('-')
-lst1_2 = lst_1[1].split('-')
+lst_1[1] = lst_1[1].split('-')
+lst_1[2] = lst_1[2].split('-')
 print(lst_1)
-
-if word>=1 and index >= word:
-    print("OK, I\'ll change for you the word #%.d" % word)
-    lst_1[word-1] = str.upper(str(lst_1[word-1])) # I think this row could be improved in some way without transfer to a string
-    print("After some changes your text looks like that:\n"," ".join(lst_1))
+age = int(lst_1[2][0])-int(lst_1[1][0])
+print(age)
+if age >= 0:
+    print("I can make a conclusion that %.s died at %.s" % str(lst_1[0]), str(age))
 else:
-    print("Your text doesn\'t have such word")
+    print("Something wrong in condition")
