@@ -6,11 +6,17 @@ print ("task 9")
 print ("==========================================================")
 
 str_1 = str(input("Please, enter any text: "))
-print ("Thanks! Your texts are: \n1.%s" % str_1)
+print("Thanks! Your texts are: \n%s" % str_1)
 lst_1 = str.split(str_1)
-lst_1[1] = str.upper(str(lst_1[1]))
-print("After some changes your text looks like that:\n", " ".join(lst_1))
-
+index = int(len(lst_1))
+print("As you can see your text contains %.d words" % index)
+word = int(input("Please select the serial number of word which you want to make in UPPER case:"))
+if word>=1 and index >= word:
+    print("OK, I\'ll change for you the word #%.d" % word)
+    lst_1[word-1] = str.upper(str(lst_1[word-1]))
+    print("After some changes your text looks like that:\n"," ".join(lst_1))
+else:
+    print("Your text doesn\'t have such word")
 
 
 
