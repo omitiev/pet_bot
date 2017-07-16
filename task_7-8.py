@@ -23,5 +23,5 @@ index=int(round(len(str2))/2)
 str2_1=str2[:index]
 str2_2=str2[index:]
 new_str=str2_1+str1+str2_2
-print("But I have improved your texts and now they looks like a single text - see below:\n",new_str)
+print("But I have improved your texts and now they look like a single text - see below:\n",new_str)
 
