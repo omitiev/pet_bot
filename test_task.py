@@ -112,4 +112,4 @@ if b != 0:
         x = (math.log1p(c) / -b)**4 + math.fabs(a)
         print ("Result of expression (ln(1+c)/-b)**4+|a| is:" , x)
 else:
-    print ("Error: Sorry operation couldn't be performed due to 'Division by zero' rule") 
+    print ("Error: Sorry operation couldn't be performed due to 'Division by zero' rule")
