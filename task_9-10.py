@@ -32,10 +32,9 @@ print("You entered next condition : \n%s" % cond)
 lst_1 = cond.split('*')
 lst_1[1] = lst_1[1].split('-')
 lst_1[2] = lst_1[2].split('-')
-print(lst_1)
 age = int(lst_1[2][0])-int(lst_1[1][0])
-print(age)
+print()
 if age >= 0:
-    print("I can make a conclusion that %.s died at %.s" % str(lst_1[0]), str(age))
+    print("I can make a conclusion that " + lst_1[0] + " died at %d" % age)
 else:
     print("Something wrong in condition")
