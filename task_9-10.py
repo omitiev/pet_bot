@@ -14,7 +14,6 @@ word = int(input("Please select the serial number of word which you want to make
 if word >= 1 and index >= word:
     print("OK, I\'ll change for you the word #%.d" % word)
     lst_1[word - 1] = lst_1[word - 1].upper()
-    str.upper(str(lst_1[word - 1]))
     print("After some changes your text looks like that:\n", " ".join(lst_1))
 else:
     print("Your text doesn\'t have such word")
