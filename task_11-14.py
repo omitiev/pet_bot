@@ -23,30 +23,30 @@ cos_angle_2 = find_cos(find_rad(d_angle_2))
 cos_angle_3 = find_cos(find_rad(d_angle_3))
 print("If I'm right the answers are: \n %.16f for angle 1 \n %.16f for angle 2 \n %.16f for angle 3" % (cos_angle_1,cos_angle_2, cos_angle_3))
 
-# r_angle_1 = find_rad(d_angle_1)
-# cos_angle_1 = find_cos(r_angle_1)
-# r_angle_2 = find_rad(d_angle_2)
-# cos_angle_2 = find_cos(r_angle_2)
-# r_angle_3 = find_rad(d_angle_3)
-# cos_angle_3 = find_cos(r_angle_3)
-#
-# print("If I'm right the answers are: \n %.16f for angle 1 \n %.16f for angle 2 \n %.16f for angle 3" % (cos_angle_1,cos_angle_2, cos_angle_3))
-
 # Написать функцию, которая рассчитывает сумму всех цифр некоторого трехзначного числа,
 # введенного пользователем в консоли, без использования операторов цикла.
 print("==========================================================")
 print("task 12")
 print("==========================================================")
 
+def sum_num(x):
+    sum = int(list(x)[0]) + int(list(x)[1]) + int(list(x)[2])
+    return sum
 
-
+num = str(input("Enter the number which contain 3 digit: "))
+if len(num) == 3:
+    result = sum_num(num)
+    print("The summ of digits of your number is %d" % result)
+elif len(num) < 3:
+    print("Sorry, your number contain less than 3 digit")
+else:
+    print("Sorry, your number contain more than 3 digit")
 
 # Пользователь вводит длины катетов прямоугольного треугольника.
 # Написать функцию, которая вычислит и выведет на экран площадь треугольника и его периметр.
 print("==========================================================")
 print("task 13")
 print("==========================================================")
-
 
 
 
