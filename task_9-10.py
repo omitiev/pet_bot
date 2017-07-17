@@ -29,12 +29,12 @@ print("==========================================================")
 cond = str(input(
     "Please, enter condition for the task in the next way name*birth date*death date (date should be in the next format YYYY-MM-DD): "))
 print("You entered next condition : \n%s" % cond)
-lst_1 = cond.split('*')
-lst_1[1] = lst_1[1].split('-')
-lst_1[2] = lst_1[2].split('-')
-age = int(lst_1[2][0]) - int(lst_1[1][0])
+name1_lst = cond.split('*')
+name1_lst[1] = name1_lst[1].split('-')
+name1_lst[2] = name1_lst[2].split('-')
+age = int(name1_lst[2][0]) - int(name1_lst[1][0])
 print()
 if age >= 0:
-    print("I can make a conclusion that " + lst_1[0] + " died at %d" % age)
+    print("I can make a conclusion that " + name1_lst[0] + " died at %d" % age)
 else:
     print("Something wrong in condition")
