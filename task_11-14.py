@@ -1,6 +1,7 @@
 import math
 # Написать функцию, которая будет переводить градусы в радианы.
 # Используя эту функцию вывести на экран значения косинусов углов в 60, 45 и 40 градусов.
+
 print("==========================================================")
 print("task 11")
 print("==========================================================")
@@ -48,6 +49,21 @@ elif len(num) < 3:
 else:
     print("Sorry, your number contain more than 3 digit")
 
+
+print("Let's make this task in another way (but for you, it will be actually the same)")
+
+
+def sum_num_2(x):
+    a = x // 100
+    c = x % 10
+    b = (x - c) / 10 % 10
+    sum2 = a + b + c
+    return sum2
+
+num2 = int(input("Enter the number which contain 3 digit: "))
+result_2 = sum_num_2(num2)
+print("The sum of digits of your number is %d" % result_2)
+
 # Пользователь вводит длины катетов прямоугольного треугольника.
 # Написать функцию, которая вычислит и выведет на экран площадь треугольника и его периметр.
 # S=1/2ab
@@ -81,6 +97,7 @@ print("If I'm right the triangle square is %.2f and triangle perimeter is %.2f" 
 
 
 # Написать функцию, которая будет проверять четность некоторого числа.
+
 print("==========================================================")
 print("task 14")
 print("==========================================================")
