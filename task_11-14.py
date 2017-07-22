@@ -17,7 +17,6 @@ def find_cos(x):
     return cos
 
 d_sym = '\u00b0'
-print(d_sym)
 
 d_angle_1 = int(input("Enter the value in degree for angle 1: "))
 d_angle_2 = int(input("Enter the value in degree for angle 2: "))
@@ -103,13 +102,11 @@ print("task 14")
 print("==========================================================")
 
 
-def even_odd(x):
-    reminder = x % 2
-    return reminder
-
+def is_even(x):
+    return x % 2 == 0
 
 number = int(input("Enter the the number: "))
-if even_odd(number) == 0:
+if is_even(number):
     print("Your number is even")
 else:
     print("Your number is odd")
