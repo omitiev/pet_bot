@@ -9,18 +9,18 @@ default.start(20)
 
 
 def diff_btw_the_sums_of_even_and_odd(min_v, max_v, amount):
-    total_1 = 0
-    total_2 = 0
+    total_even = 0
+    total_odd = 0
     for i in range(amount):
         num = random.randint(min_v, max_v)
         if default.is_even(num):
-            total_1 += num
+            total_even += num
         else:
-            total_2 += num
+            total_odd += num
     print("""
         The sum of even numbers in a range is %i
-        The sum of odd numbers in a range is %i""" % (total_1, total_2))
-    diff = total_1 - total_2
+        The sum of odd numbers in a range is %i""" % (total_even, total_odd))
+    diff = total_even - total_odd
     print("The difference between the sums of even and odd is %i" % (diff))
 
 min_value = int(input("Please enter min value for the range:"))
