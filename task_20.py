@@ -21,7 +21,7 @@ def diff_btw_the_sums_of_even_and_odd(min_v, max_v, amount):
         The sum of even numbers in a range is %i
         The sum of odd numbers in a range is %i""" % (total_even, total_odd))
     diff = total_even - total_odd
-    print("The difference between the sums of even and odd is %i" % (diff))
+    return  diff
 
 min_value = int(input("Please enter min value for the range:"))
 max_value = int(input("Please enter max value for the range:"))
@@ -29,7 +29,7 @@ amount = int(input("Please enter amount of selection:"))
 if min_value > max_value or amount <= 0:
     print("Something went wrong - check the entered data")
 else:
-    diff_btw_the_sums_of_even_and_odd(min_value, max_value, amount)
+    print("The difference between the sums of even and odd is: ", diff_btw_the_sums_of_even_and_odd(min_value, max_value, amount))
 
 
 default.end()
