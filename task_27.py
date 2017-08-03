@@ -7,6 +7,7 @@
 import default
 import random
 
+
 default.start(27)
 
 
