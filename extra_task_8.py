@@ -23,3 +23,13 @@ print("Your string is pangram? ", is_pangram(str4check))
 
 
 default.end()
+
+# can be squeezed to:
+#
+# counter = sum([1 for c in alphabet if c in usr_str])
+# and taking into account string module, you can go even further:
+#
+# return sum([1 for c in alphabet if c in usr_str]) == len(string.ascii_lowercase)
+# Also, a user can enter capitals, so this should also be handled correctly:
+#
+# return sum([1 for c in alphabet if c.lower() in usr_str]) == len(string.ascii_lowercase)
