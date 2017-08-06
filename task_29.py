@@ -13,11 +13,11 @@ default.start(29)
 lst1 = []
 [lst1.append(random.randint(-1, 1)) for i in range(11)]
 print("The strange string: %s" % (", ".join([str(i) for i in lst1])))
-if (lst1.count(-1) > lst1.count(0)) or (lst1.count(-1) > lst1.count(1)):
+if (lst1.count(-1) > lst1.count(0)) and (lst1.count(-1) > lst1.count(1)):
     print("The most popular number in the list is -1")
-elif (lst1.count(0) > lst1.count(-1)) or (lst1.count(0) > lst1.count(1)):
+elif (lst1.count(0) > lst1.count(-1)) and (lst1.count(0) > lst1.count(1)):
     print("The most popular number in the list is 0")
-elif (lst1.count(1) > lst1.count(-1)) or (lst1.count(1) > lst1.count(0)):
+elif (lst1.count(1) > lst1.count(-1)) and (lst1.count(1) > lst1.count(0)):
     print("The most popular number in the list is 0")
 else:
     print()
