@@ -9,12 +9,14 @@ default.start(26)
 def primes(x):
     primes_lst = [2]
     for i in range(3, x+1, 2):
-        if (i > 3) and (i%3 == 0):
+        if (i > 10) and (i % 10 == 5):
             continue
-        elif (i > 10) and (i%10 == 5):
-            continue
-        elif (i > 7) and (i%7 == 0):
-            continue
+        for j in primes_lst:
+            if j * j - 1 > i:
+                primes_lst.append(i)
+                break
+            elif i % j == 0:
+                break
         else:
             primes_lst.append(i)
     return primes_lst
