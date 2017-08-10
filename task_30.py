@@ -19,11 +19,8 @@ def encrypt_my_text(base_str):
     crypto_table = [chr(i) for i in range(ord('A'), ord('z') + 1)] + [chr(i) for i in range(ord('!'), ord('?') + 1)]
     encrypted_list = []
     for i in base_str:
-        char_ind = crypto_table.index(i)+5
-        if char_ind < len(crypto_table):
-            encrypted_list.append(crypto_table[char_ind])
-        else:
-            encrypted_list.append(crypto_table[char_ind-len(crypto_table)])
+        char_ind = (crypto_table.index(i) + 5) % len(crypto_table)
+        encrypted_list.append(crypto_table[char_ind])
     return encrypted_list
 
 
