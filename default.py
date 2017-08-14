@@ -50,3 +50,12 @@ def select_random(lst1, num):
         lst2.append(random.choice(lst1))
         i += 1
     return lst2
+
+
+def create_random_lst(lst_len):
+    i = 0
+    lst = []
+    while i < lst_len:
+        lst.append(random.randint(-1000, 1000))
+        i += 1
+    return lst

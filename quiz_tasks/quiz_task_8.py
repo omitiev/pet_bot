@@ -4,7 +4,7 @@ import default
 import copy
 
 
-default.start(7)
+default.start(8)
 
 
 def replace_min_max_values(lst1):
