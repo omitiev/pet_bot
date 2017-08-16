@@ -16,12 +16,12 @@ def multipy_odds(number):
         if x != 1:
             return x
         else:
-            return False
+            return 0
 
 number = str(input("Please enter a number with 5 digits: "))
 if len(number) == 5:
     print("Your number is:", number)
-    if multipy_odds(number) is not False:
+    if multipy_odds(number) != 0:
         print("The multiplication of all odd digits in number is %d" % (multipy_odds(number)))
     else:
         print("Your number doesn't contain odd digits or multiplication of all odd digits = 1")
