@@ -13,13 +13,14 @@ def who_closer(x_num, num1, num2):
         return num1
     elif abs(x_num - num1) > abs(x_num - num2):
         return num2
-    else:
-        return "the distances are equal"
+
 
 x_num = float(input("Please enter the main number: "))
 num1 = float(input("Please enter first number for comparison: "))
 num2 = float(input("Please enter second number for comparison: "))
-print("Result:", who_closer(x_num, num1, num2))
-
+if abs(num1) != abs(num2):
+    print("The closer is: ", who_closer(x_num, num1, num2))
+else:
+    print("The distance for both numbers is equal")
 
 default.end()
