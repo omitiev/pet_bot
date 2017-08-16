@@ -11,15 +11,14 @@ default.start(9)
 
 
 def return_max(lst):
-    [lst.append(i*(-1)) for i in lst if i < 0]
-    return max(lst)
-
+    return max(lst, key=lambda x: abs(x))
 
 def set_int_value(lst):
     d = {}.fromkeys(lst)
+    max_val = return_max(lst)
     for elem in lst:
         if elem in d:
-            d[elem] = round((elem/return_max(lst)), 4)
+            d[elem] = round((elem/max_val), 4)
     return d
 
 
