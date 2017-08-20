@@ -12,27 +12,20 @@ import random
 default.start(12)
 
 
-def create_list_with_tasks():
-    tasks_dict={}
-    for i in range(2, 10):
-        for j in range(2, 10):
-            task = str(i)+'*'+str(j)
-            result = i*j
-            tasks_dict[task] = result
-    return tasks_dict
+def create_list_with_tasks(amount=15):
+    lst1 = []
+    lst2 = []
+    [lst1.append(i) for i in range(2, 10)]
+    while len(lst2) < amount:
+        num1 = random.choice(lst1)
+        num2 = random.choice(lst1)
+        x1 = ('%d * %d' % (num1, num2))
+        x2 = ('%d * %d' % (num2, num1))
+        if (x1 not in lst2) and (x2 not in lst2):
+            lst2.append(x1)
+    return lst2
 
 
-def select_random_tasks(all, ammount):
-    full_list_of_tasks = list(all.keys())
-    list_of_tasks = []
-    while len(set(list_of_tasks)) < ammount:
-        list_of_tasks.append(random.choice(full_list_of_tasks))
-    return set(list_of_tasks)
-
-
-f_tasks = create_list_with_tasks()
-rand_tasks = select_random_tasks(f_tasks, 15)
-print("Today we should decide next tasks: ", rand_tasks)
-
+print("Today we will decide next tasks: ", create_list_with_tasks())
 
 default.end()
