@@ -127,26 +127,89 @@ def demo():
     :return: None
     '''
 
-    # available urls
-    # http://54.201.47.219:8080/api/v1/students/
-    # http://54.201.47.219:8080/api/v1/students/1025
+    ## available urls
+    ## http://54.201.47.219:8080/api/v1/students/
+    ## http://54.201.47.219:8080/api/v1/students/1025
     # http://54.201.47.219:8080/api/v1/hw_results/
     # http://54.201.47.219:8080/api/v1/hw_results/1025
     # http://54.201.47.219:8080/api/v1/test1_results/
     # http://54.201.47.219:8080/api/v1/test1_results/1025
     # http://54.201.47.219:8080/api/v1/test1_weights/
 
+    # pprint(get_students())
+    #
+    # pprint(get_student(1024))
+    # update_student(1024, {'rank': 42})
+    # pprint(get_student(1024))
+    #
+    # add_student({"id": 1234, "fullname": "AAAA", "email": "x@y.z", "github": "", "rank": 0})
+    # pprint(get_student(1234))
+    #
+    # reset()
+    # pprint(get_students())
+    # pprint(get_hw_results())
+    # pprint(get_test1_results())
+    # pprint(get_test1_weights())
+    pprint(update_students_results())
     pprint(get_students())
+    # pprint(get_hw_results(1034))
 
-    pprint(get_student(1024))
-    update_student(1024, {'rank': 42})
-    pprint(get_student(1024))
 
-    add_student({"id": 1234, "fullname": "AAAA", "email": "x@y.z", "github": "", "rank": 0})
-    pprint(get_student(1234))
 
-    reset()
-    pprint(get_students())
+# ------------------------------------------------------------------------------
+def get_hw_results():
+    response = requests.get(URL + '/hw_results')
+    result = None
+
+    if response.status_code == 200:
+        json_object = response.json()
+        result = {i['id']: i['task_completion'] for i in json_object}
+    else:
+        log_error(response.content)
+
+    return result
+
+
+# ------------------------------------------------------------------------------
+def get_student_hw_results(id):
+    response = requests.get(URL + '/hw_results/' + str(id))
+    result = None
+
+    if response.status_code == 200:
+        json_object = response.json()
+        result = json_object['task_completion']
+    else:
+        log_error(response.content)
+
+    return result
+
+
+# ------------------------------------------------------------------------------
+def get_test1_results():
+    response = requests.get(URL + '/test1_results')
+    result = None
+
+    if response.status_code == 200:
+        json_object = response.json()
+        result = {i['id']: i['task_completion'] for i in json_object}
+    else:
+        log_error(response.content)
+
+    return result
+
+
+# ------------------------------------------------------------------------------
+def get_test1_weights():
+    response = requests.get(URL + '/test1_weights')
+    result = None
+
+    if response.status_code == 200:
+        json_object = response.json()
+        result = json_object['test1_weights']
+    else:
+        log_error(response.content)
+
+    return result
 
 
 # ------------------------------------------------------------------------------
@@ -158,7 +221,21 @@ def update_students_results():
     For example, student with id=1025 has total rank = 1*32 + (1*1 + 1*1 + 1*1 + ... 1*15) = 68)
     :return: None
     '''
-    pass
+
+
+    students = get_students()
+    hw_result = get_hw_results()
+    test1_results = get_test1_results()
+    test1_weights = get_test1_weights()
+    for student in students:
+        s_id = student['id']
+        # get_student_hw_results(s_id)     slow method
+        hw_rank = hw_result[s_id]
+        test1_rank = test1_results[s_id]
+        total_rank = sum(hw_rank)
+        for i in range(len(test1_rank)):
+            total_rank += int(test1_rank[i]) * int(test1_weights[i])
+        update_student(s_id, {'rank': total_rank})
 
 
 # ------------------------------------------------------------------------------
