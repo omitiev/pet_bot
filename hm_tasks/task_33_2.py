@@ -150,8 +150,9 @@ def demo():
     # pprint(get_hw_results())
     # pprint(get_test1_results())
     # pprint(get_test1_weights())
-    pprint(update_students_results())
-    pprint(get_students())
+    # pprint(update_students_results())
+    # pprint(get_students())
+    pprint(print_students_info())
     # pprint(get_hw_results(1034))
 
 
@@ -239,7 +240,7 @@ def update_students_results():
 
 
 # ------------------------------------------------------------------------------
-def print_students_info(sort_by_key="fullname"):
+def print_students_info(sort_by_key='fullname'):
     '''
     Prints students info sorted according to the passed key in dictionary). By default, sort by students names.
     Student info should be presented as a card that includes the following information:
@@ -259,7 +260,21 @@ def print_students_info(sort_by_key="fullname"):
         -----------------------------------------
     :return: None
     '''
-    pass
+    students = get_students()
+    students.sort(key=lambda student: student[sort_by_key])
+    for student in students:
+        print('-' * 50)
+        print(':' + ' ID: ' + '%43d:' % (student['id']))
+        print(':' + '.'*48 + ':')
+        print(':' + ' Full name: ' + '%36s:' % (student['fullname']))
+        print(':' + ' Email: ' + '%40s:' % (student['email']))
+        git = student['github'].split('/')
+        if len(git) >=4:
+            print(':' + ' Github: ' + '%39s:' % (git[3]))
+        else:
+            print((':' + ' Github: ' + ' '*10 + 'user doesn\'t have GIT account:'))
+        print(':' + ' Rank: ' + '%41d:' % (student['rank']))
+        print('-' * 50)
 
 
 # ------------------------------------------------------------------------------
