@@ -7,22 +7,26 @@
 class Godzilla:
     def __init__(self, stomach_size):
         self.stomach_size = float(stomach_size)
-        self.stomach_filling = float(0)
-        self.stomach_filling_upper_line = stomach_size*90/100
+        self.stomach_filling = 0.0
+        self.stomach_filling_upper_limit = stomach_size * 90 / 100
 
 
     def print_info(self):
         print('~'*50)
         print('Godzilla\'s stomach size:', self.stomach_size)
-        print('Godzilla\'s stomach upper line:', self.stomach_filling_upper_line)
+        print('Godzilla\'s stomach upper line:', self.stomach_filling_upper_limit)
         print('Godzilla\'s stomach filling:', self.stomach_filling)
-        if self.stomach_filling >= self.stomach_filling_upper_line:
+        if self.stomach_filling >= self.stomach_filling_upper_limit:
             print('Godzilla\'s stomach is full. Godzilla is unable to eat more.')
         print('~'*50)
 
 
     def daily_lunch(self, human_weight):
-        self.stomach_filling += human_weight
-        if self.stomach_filling >= self.stomach_filling_upper_line:
-            print('Godzilla\'s stomach is full. Godzilla is unable to eat more.')
+        if (self.stomach_filling + human_weight) <= self.stomach_filling_upper_limit:
+            self.stomach_filling += human_weight
+            print('Godzilla has eaten human with weight ', human_weight)
+            if self.stomach_filling == self.stomach_filling_upper_limit:
+                print('Godzilla\'s stomach is full. Godzilla is unable to eat more.')
+        else:
+            print('Godzilla\'s stomach is full. Godzilla is unable to eat more than %.1f' % (self.stomach_filling_upper_limit - self.stomach_filling))
 
