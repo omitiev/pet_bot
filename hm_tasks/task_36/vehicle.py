@@ -27,5 +27,5 @@ class Vehicle:
             return False
 
     def get_vehicle(self):
-        ts = [self.type, int(self.capacity_of_passengers), Vehicle.get_direction(self)]
+        ts = [self.type, int(self.capacity_of_passengers), self.get_direction()]
         return ts

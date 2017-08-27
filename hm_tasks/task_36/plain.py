@@ -12,5 +12,5 @@ class Plain(Vehicle):
         print("The min distance for taking-off is: %d meters" % (self.min_dist_take_off))
 
     def get_plain(self):
-        plain = Vehicle.get_vehicle(self) + [self.type_of_fuel, self.min_dist_take_off]
+        plain = self.get_vehicle() + [self.type_of_fuel, self.min_dist_take_off]
         return plain

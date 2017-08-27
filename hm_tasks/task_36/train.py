@@ -10,5 +10,5 @@ class Train(Vehicle):
         print("Type of fuel: ", self.type_of_fuel)
 
     def get_train(self):
-        train = Vehicle.get_vehicle(self) + [self.type_of_fuel]
+        train = self.get_vehicle() + [self.type_of_fuel]
         return train
