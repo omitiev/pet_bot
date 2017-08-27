@@ -13,8 +13,4 @@ class Circle(Dot):
 
     def is_dot_in_circle(self, dot_x, dot_y):
         dist_btw_dots = math.sqrt((dot_x - self.coordinate_x) ** 2 + (dot_y - self.coordinate_y) ** 2)
-        if self.radius >= dist_btw_dots:
-            return True
-        else:
-            return False
-
+        return self.radius >= dist_btw_dots

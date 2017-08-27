@@ -18,4 +18,4 @@ class Dot:
         print('~' * 50)
 
     def get_coordinates(self):
-        return [self.coordinate_x, self.coordinate_y]
+        return self.coordinate_x, self.coordinate_y
