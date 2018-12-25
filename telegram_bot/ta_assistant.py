@@ -1,7 +1,7 @@
 import requests
 import datetime
+from bot_details import token
 
-token = ''
 
 class BotHandler:
 
@@ -32,10 +32,21 @@ class BotHandler:
 
         return last_update
 
+    def log_time(self, chat_id):
+        self.send_message(chat_id, 'Specify the task')
+
+        # new_offset = last_update_id + 1
+        # bot_assistant.get_updates(new_offset)
+        issue_to_log = self.get_last_update()
+        self.send_message(chat_id, "I'm faster")
+        self.send_message(chat_id, '{}'.format(issue_to_log))
+
+
 bot_assistant = BotHandler(token)
 greetings = ('hi', 'hello')
 bot_tasks = ('log_time', 'get_report', 'run_tests')
 now = datetime.datetime.now()
+
 
 def main():
     new_offset = None
@@ -55,9 +66,9 @@ def main():
                                        format(last_chat_name))
 
         elif last_chat_text.lower() == 'log_time':
-            bot_assistant.send_message(last_chat_id, 'Specify the task')
-            new_offset = last_update_id + 1
-            bot_assistant.get_updates(new_offset)
+            bot_assistant.log_time(last_chat_id)
+
+
 
 
         new_offset = last_update_id + 1
