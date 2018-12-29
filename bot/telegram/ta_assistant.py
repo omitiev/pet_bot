@@ -1,7 +1,5 @@
 import datetime
-
 import requests
-
 from bot.bot_details import token
 
 
