@@ -34,7 +34,7 @@ class BotHandler:
 
     def log_time(self, chat_id):
         self.send_message(chat_id, 'Specify the task')
-
+        last_update = self.get_last_update()
         # new_offset = last_update_id + 1
         # bot_assistant.get_updates(new_offset)
         issue_to_log = self.get_last_update()
