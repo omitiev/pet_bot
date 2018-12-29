@@ -1,6 +1,8 @@
-import requests
 import datetime
-from bot_details import token
+
+import requests
+
+from bot.bot_details import token
 
 
 class BotHandler:
