@@ -68,9 +68,6 @@ def main():
         elif last_chat_text.lower() == 'log_time':
             bot_assistant.log_time(last_chat_id)
 
-
-
-
         new_offset = last_update_id + 1
 
 if __name__ == '__main__':
@@ -78,3 +75,6 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         exit()
+
+
+# n coroutines > packaged in futures > called in while True
